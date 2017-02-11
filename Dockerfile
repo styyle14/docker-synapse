@@ -51,5 +51,5 @@ USER "${username}"
 VOLUME ["/home/${username}/config"]
 WORKDIR "/home/${username}/"
 EXPOSE 8448
-CMD synctl start ./config/homeserver.yaml
+CMD python -B -m synapse.app.homeserver -c ./config/homeserver.yaml
 
